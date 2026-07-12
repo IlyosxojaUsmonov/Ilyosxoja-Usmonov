@@ -42,7 +42,7 @@ const experience: { title: Record<Lang, string>; org: Record<Lang, string>; date
 
 function Resume() {
   const { t, lang } = useI18n();
-  const resumeDocxUrl = "/files/Usmonov_Ilyosxoja_CV_Junior_Frontend.docx";
+  const resumeDocxUrl = "/files/Ilyosxoja%20Usmonov%20rezume.docx";
 
   return (
     <>
