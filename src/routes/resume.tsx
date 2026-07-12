@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useI18n, type Lang } from "@/lib/i18n";
 import { PageHeader } from "@/components/PageHeader";
-import { Download } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({ meta: [
@@ -42,11 +42,18 @@ const experience: { title: Record<Lang, string>; org: Record<Lang, string>; date
 
 function Resume() {
   const { t, lang } = useI18n();
+  const resumeDocxUrl = "/files/Usmonov_Ilyosxoja_CV_Junior_Frontend.docx";
+
   return (
     <>
       <PageHeader kicker="CV" title={t("resume.title")}>
         <div className="mt-6 flex flex-wrap gap-3">
-          <a href="#" className="btn-primary"><Download className="h-4 w-4" /> {t("resume.download")}</a>
+          <a href={resumeDocxUrl} download className="btn-primary" target="_blank" rel="noopener noreferrer">
+            <Download className="h-4 w-4" /> {t("resume.download")}
+          </a>
+          <a href={resumeDocxUrl} className="btn-outline" target="_blank" rel="noopener noreferrer">
+            <ExternalLink className="h-4 w-4" /> {lang === "uz" ? "Ochib ko'rish" : "Open preview"}
+          </a>
         </div>
       </PageHeader>
 
