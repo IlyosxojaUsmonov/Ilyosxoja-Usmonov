@@ -37,7 +37,7 @@ function Home() {
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8 grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 fade-up">
             <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase">
-              <span className="h-2 w-2 rounded-full bg-primary animate-pulse" /> {lang === "uz" ? "Frilans uchun ochiq" : "Available for freelance"}
+              <span className="h-2 w-2 rounded-full bg-primary animate-pulse" /> {t("home.available")}
             </div>
             <h1 className="display-xl text-6xl sm:text-7xl md:text-8xl">
               Ilyosxoja
@@ -99,7 +99,7 @@ function Home() {
         <div className="relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
           <div className="flex gap-4 marquee w-max">
             {[...techs, ...techs].map((tech, i) => (
-              <div key={i} className="shrink-0 px-6 py-4 rounded-2xl border border-primary/20 bg-white text-primary font-semibold shadow-sm">
+              <div key={i} className="shrink-0 px-6 py-4 rounded-2xl border border-primary/20 bg-card text-primary font-semibold shadow-sm">
                 {tech}
               </div>
             ))}
@@ -167,7 +167,7 @@ function Home() {
         <h2 className="text-3xl md:text-4xl font-bold mb-10">{t("home.why.title")}</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {whys.map(({ i: Icon, k }) => (
-            <div key={k} className="rounded-3xl p-6 bg-white border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
+            <div key={k} className="rounded-3xl p-6 bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all">
               <div className="grid place-items-center h-12 w-12 rounded-2xl bg-primary/10 text-primary mb-4"><Icon className="h-6 w-6" /></div>
               <div className="font-display font-bold text-lg">{t(`home.why.${k}.t` as const)}</div>
               <p className="text-sm text-muted-foreground mt-2">{t(`home.why.${k}.d` as const)}</p>
@@ -179,8 +179,8 @@ function Home() {
       {/* CLOSING CTA */}
       <section className="mx-auto max-w-7xl px-5 sm:px-8 pb-20">
         <div className="relative rounded-[2.5rem] overflow-hidden p-10 md:p-16 text-center" style={{ background: "linear-gradient(120deg, var(--primary), var(--primary-glow))" }}>
-          <div className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-white/20 blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-white/20 blur-3xl" />
+          <div className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-card/20 blur-3xl" />
+          <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-card/20 blur-3xl" />
           <h3 className="relative display-xl text-4xl md:text-5xl text-white">{t("home.closing.title")}</h3>
           <p className="relative mt-4 text-white/90 max-w-xl mx-auto">{t("home.closing.sub")}</p>
           <div className="relative mt-8">

@@ -22,10 +22,10 @@ const skillGroups = [
 ];
 
 const steps = [
-  { i: Compass, t: { uz: "Aniqlash", en: "Discover" }, d: { uz: "Maqsad va talablarni birga aniqlaymiz.", en: "Understand goals & requirements together." } },
-  { i: Layers, t: { uz: "Dizayn", en: "Design" }, d: { uz: "Wireframe va vizual dizayn tayyorlanadi.", en: "Wireframes and visual design come to life." } },
-  { i: PackageCheck, t: { uz: "Ishlab chiqish", en: "Develop" }, d: { uz: "Toza kod, responsive va tez.", en: "Clean, responsive, fast code." } },
-  { i: GraduationCap, t: { uz: "Yetkazish", en: "Deliver" }, d: { uz: "Test, tuzatishlar va ishga tushirish.", en: "Testing, revisions, and launch." } },
+  { i: Compass, t: { uz: "Aniqlash", en: "Discover", ru: "Анализ" }, d: { uz: "Maqsad va talablarni birga aniqlaymiz.", en: "Understand goals & requirements together.", ru: "Вместе определяем цели и требования." } },
+  { i: Layers, t: { uz: "Dizayn", en: "Design", ru: "Дизайн" }, d: { uz: "Wireframe va vizual dizayn tayyorlanadi.", en: "Wireframes and visual design come to life.", ru: "Wireframe и визуальный дизайн оживают." } },
+  { i: PackageCheck, t: { uz: "Ishlab chiqish", en: "Develop", ru: "Разработка" }, d: { uz: "Toza kod, responsive va tez.", en: "Clean, responsive, fast code.", ru: "Чистый, адаптивный и быстрый код." } },
+  { i: GraduationCap, t: { uz: "Yetkazish", en: "Deliver", ru: "Сдача" }, d: { uz: "Test, tuzatishlar va ishga tushirish.", en: "Testing, revisions, and launch.", ru: "Тестирование, правки и запуск." } },
 ];
 
 function About() {
@@ -57,7 +57,7 @@ function About() {
         <h2 className="text-3xl md:text-4xl font-bold mb-8">{t("about.skills")}</h2>
         <div className="grid md:grid-cols-3 gap-5">
           {skillGroups.map((g) => (
-            <div key={g.title} className="rounded-3xl p-6 bg-white border border-border">
+            <div key={g.title} className="rounded-3xl p-6 bg-card border border-border">
               <div className="text-sm font-semibold text-primary uppercase tracking-wider">{g.title}</div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {g.items.map((it) => (
@@ -75,20 +75,20 @@ function About() {
         <ol className="relative border-l-2 border-primary/30 pl-8 space-y-8">
           <li>
             <span className="absolute -left-[11px] h-5 w-5 rounded-full bg-primary ring-4 ring-primary/20" />
-            <div className="text-sm text-muted-foreground">2024 — {lang === "uz" ? "Hozirgi" : "Present"}</div>
+            <div className="text-sm text-muted-foreground">2024 — {t("about.present")}</div>
             <div className="font-display font-bold text-xl mt-1">Mars IT School — Frontend Developer track</div>
-            <p className="text-muted-foreground mt-1">{lang === "uz" ? "HTML, CSS, JavaScript, React va Tailwind CSS bo'yicha chuqur o'rganish." : "Deep-dive into HTML, CSS, JavaScript, React and Tailwind CSS."}</p>
+            <p className="text-muted-foreground mt-1">{t("about.edu.desc")}</p>
           </li>
           <li>
             <span className="absolute -left-[11px] h-5 w-5 rounded-full bg-primary/40 ring-4 ring-primary/10" />
             <div className="text-sm text-muted-foreground">2024</div>
-            <div className="font-display font-bold text-xl mt-1">{lang === "uz" ? "Frilans faoliyati boshlanishi" : "Freelance journey begins"}</div>
-            <p className="text-muted-foreground mt-1">{lang === "uz" ? "Birinchi mijoz loyihalari: AdBlogger.uz, Dugoba Resort." : "First client work: AdBlogger.uz, Dugoba Resort."}</p>
+            <div className="font-display font-bold text-xl mt-1">{t("about.freelance.start")}</div>
+            <p className="text-muted-foreground mt-1">{t("about.freelance.desc")}</p>
           </li>
           <li>
             <span className="absolute -left-[11px] h-5 w-5 rounded-full border-2 border-primary" />
-            <div className="text-sm text-muted-foreground">{lang === "uz" ? "Keyingi bosqich" : "Next milestone"}</div>
-            <div className="font-display font-bold text-xl mt-1">{lang === "uz" ? "Full-stack yo'nalishida o'sish" : "Growing into full-stack"}</div>
+            <div className="text-sm text-muted-foreground">{t("about.next")}</div>
+            <div className="font-display font-bold text-xl mt-1">{t("about.fullstack")}</div>
           </li>
         </ol>
       </section>
@@ -98,7 +98,7 @@ function About() {
         <h2 className="text-3xl md:text-4xl font-bold mb-8">{t("about.process")}</h2>
         <div className="grid md:grid-cols-4 gap-4">
           {steps.map((s, i) => (
-            <div key={i} className="relative rounded-3xl p-6 bg-white border border-border">
+            <div key={i} className="relative rounded-3xl p-6 bg-card border border-border">
               <div className="absolute top-4 right-5 text-5xl font-display font-bold text-primary/10">0{i + 1}</div>
               <s.i className="h-8 w-8 text-primary" />
               <div className="mt-3 font-display font-bold text-lg">{s.t[lang]}</div>

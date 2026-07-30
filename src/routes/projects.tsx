@@ -32,21 +32,24 @@ type P = {
 const projects: P[] = [
   {
     name: "AdBlogger.uz",
-    type: { uz: "Full-stack blog va CMS platformasi", en: "Full-stack blog & CMS platform" },
+    type: { uz: "Full-stack blog va CMS platformasi", en: "Full-stack blog & CMS platform", ru: "Full-stack блог и CMS платформа" },
     overview: {
       uz: "Dinamik kontent boshqaruvi va backend integratsiyasiga ega zamonaviy blog va CMS platforma.",
       en: "Modern blog and CMS platform with dynamic content management and backend integration.",
+      ru: "Современная блог и CMS платформа с динамическим управлением контентом и backend-интеграцией.",
     },
     challenge: {
       uz: "Kontent yaratuvchilarga postlarni oson boshqarishni ta'minlash kerak edi. React interfeys backend API va ma'lumotlar bazasi bilan bog'landi.",
       en: "Content creators needed an easy way to publish and manage posts. Solved with a clean React interface connected to a backend API and database.",
+      ru: "Создателям контента нужен был простой способ публиковать и управлять постами. Решено через чистый React-интерфейс, связанный с backend API и базой данных.",
     },
     features: {
       uz: ["Postlarni yaratish/boshqarish", "Dinamik ma'lumotlar", "Responsive UI", "Backend API integratsiya", "Ma'lumotlar bazasi", "Tez va silliq UX"],
       en: ["Create & manage blog posts", "Dynamic data handling", "Responsive modern UI", "Backend API integration", "Database handling", "Fast smooth UX"],
+      ru: ["Создание и управление постами", "Динамические данные", "Адаптивный UI", "Backend API интеграция", "Работа с базой данных", "Быстрый и плавный UX"],
     },
     tech: ["React.js", "Tailwind CSS", "JavaScript", "Backend API", "Database"],
-    result: { uz: "Frontend va backendni birlashtirgan kengaytiriladigan platforma.", en: "A scalable full-stack blog platform combining frontend and backend." },
+    result: { uz: "Frontend va backendni birlashtirgan kengaytiriladigan platforma.", en: "A scalable full-stack blog platform combining frontend and backend.", ru: "Масштабируемая full-stack платформа, объединяющая frontend и backend." },
     url: "https://adblogger.uz",
     accent: "from-primary via-primary-glow to-primary",
     logo: "/adblogger.png",
@@ -54,21 +57,24 @@ const projects: P[] = [
   },
   {
     name: "Dugoba Resort",
-    type: { uz: "Premium dam olish maskani sayti", en: "Premium resort website" },
+    type: { uz: "Premium dam olish maskani sayti", en: "Premium resort website", ru: "Премиальный сайт курорта" },
     overview: {
       uz: "Kottejlar, xizmatlar va galereyani professional ko'rsatadigan lyuks dam olish maskani sayti.",
       en: "Modern website for a premium resort, showcasing cottages, services, and gallery professionally.",
+      ru: "Современный сайт премиального курорта с профессиональной подачей коттеджей, услуг и галереи.",
     },
     challenge: {
       uz: "Brendning lyuks pozitsiyasiga mos raqamli mavjudlik kerak edi. Figma dizayn asosida elegant hero, kottej ko'rgazma va galereya yaratildi.",
       en: "The resort needed a digital presence matching its luxury positioning — built from a custom Figma design with premium hero, cottage showcase and gallery.",
+      ru: "Курорту нужно было цифровое присутствие, соответствующее премиальному позиционированию — создано по Figma-дизайну с hero-секцией, витриной коттеджей и галереей.",
     },
     features: {
       uz: ["Premium hero bo'lim", "Kottej ko'rgazmasi", "Galereya tizimi", "Bron qilish bo'limi", "Mobile responsive", "Zamonaviy UI/UX"],
       en: ["Premium hero section", "Cottage showcase", "Gallery system", "Booking section", "Mobile responsive", "Modern UI/UX"],
+      ru: ["Премиальная hero-секция", "Витрина коттеджей", "Система галереи", "Раздел бронирования", "Мобильная адаптивность", "Современный UI/UX"],
     },
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Figma"],
-    result: { uz: "Brendni professional aks ettiruvchi lyuks sayt.", en: "A luxury-style website professionally representing the resort brand." },
+    result: { uz: "Brendni professional aks ettiruvchi lyuks sayt.", en: "A luxury-style website professionally representing the resort brand.", ru: "Премиальный сайт, профессионально представляющий бренд курорта." },
     accent: "from-primary-glow to-primary",
     logo: "/dugoba.png",
     logoBg: "from-emerald-950 via-emerald-900 to-green-950",
@@ -79,7 +85,7 @@ function Projects() {
   const { t, lang } = useI18n();
   return (
     <>
-      <PageHeader kicker={lang === "uz" ? "Ish portfeli" : "Selected work"} title={t("projects.title")} sub={t("projects.intro")} />
+      <PageHeader kicker={t("projects.kicker")} title={t("projects.title")} sub={t("projects.intro")} />
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 space-y-24 pb-16">
         {projects.map((p, i) => (

@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, LANGS } from "@/lib/i18n";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
   { to: "/", key: "nav.home" as const },
@@ -19,7 +20,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-[color-mix(in_oklab,white_75%,transparent)] border-b border-border/60">
+    <header className="sticky top-0 z-50 surface-glass border-b border-border/60 theme-transition">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2 font-display font-bold text-lg shrink-0">
           <img
@@ -45,8 +46,9 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <div className="flex items-center rounded-full border border-border p-0.5 text-xs font-semibold">
-            {(["uz", "en"] as const).map((l) => (
+            {LANGS.map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}

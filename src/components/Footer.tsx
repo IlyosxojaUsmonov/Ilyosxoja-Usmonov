@@ -5,7 +5,7 @@ import { useI18n } from "@/lib/i18n";
 export function Footer() {
   const { t } = useI18n();
   return (
-    <footer className="mt-32 border-t border-border/60 bg-[color-mix(in_oklab,white_85%,transparent)]">
+    <footer className="mt-32 border-t border-border/60 footer-glass theme-transition">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 py-14 grid gap-10 md:grid-cols-3">
         <div>
           <div className="font-display font-bold text-2xl">Ilyosxoja Usmonov</div>

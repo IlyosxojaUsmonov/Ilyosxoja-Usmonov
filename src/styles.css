@@ -66,9 +66,42 @@
   --ring: oklch(0.52 0.24 262);
 }
 
+.dark {
+  --paper: oklch(0.13 0.025 250);
+  --ink: oklch(0.95 0.01 240);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(0.17 0.03 250);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.17 0.03 250);
+  --popover-foreground: var(--ink);
+
+  --primary: oklch(0.62 0.22 262);
+  --primary-foreground: oklch(0.99 0.005 240);
+  --primary-glow: oklch(0.72 0.18 255);
+
+  --secondary: oklch(0.21 0.03 250);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.21 0.025 250);
+  --muted-foreground: oklch(0.65 0.03 255);
+  --accent: oklch(0.23 0.05 255);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.27 0.025 250);
+  --input: oklch(0.25 0.025 250);
+  --ring: oklch(0.62 0.22 262);
+}
+
 @layer base {
   * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+  html.dark { color-scheme: dark; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -78,6 +111,7 @@
       radial-gradient(circle at 15% -10%, color-mix(in oklab, var(--primary-glow) 22%, transparent), transparent 45%),
       radial-gradient(circle at 110% 5%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 50%);
     background-attachment: fixed;
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
   h1,h2,h3,h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
@@ -102,11 +136,22 @@
   opacity: 0.55;
 }
 
+@utility surface-glass {
+  background: color-mix(in oklab, var(--background) 78%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+@utility footer-glass {
+  background: color-mix(in oklab, var(--background) 88%, transparent);
+  backdrop-filter: blur(14px);
+}
+
 @utility card-glass {
-  background: color-mix(in oklab, white 78%, transparent);
+  background: color-mix(in oklab, var(--card) 78%, transparent);
   backdrop-filter: blur(14px);
   border: 1px solid color-mix(in oklab, var(--primary) 10%, var(--border));
   box-shadow: 0 10px 40px -18px color-mix(in oklab, var(--primary) 40%, transparent);
+  transition: background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 @utility btn-primary {
@@ -124,10 +169,14 @@
   padding: 0.85rem 1.4rem; border-radius: 999px; font-weight: 600;
   border: 1.5px solid var(--primary);
   color: var(--primary);
-  background: color-mix(in oklab, white 60%, transparent);
+  background: color-mix(in oklab, var(--card) 60%, transparent);
   transition: all .2s ease;
 }
 @utility btn-outline { &:hover { background: var(--primary); color: var(--primary-foreground); } }
+
+@utility theme-transition {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
 
 @utility marquee {
   animation: marquee 30s linear infinite;

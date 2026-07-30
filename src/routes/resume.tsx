@@ -59,7 +59,7 @@ function Resume() {
 
       <div className="mx-auto max-w-5xl px-5 sm:px-8 grid gap-6 pb-16">
         {/* Summary */}
-        <section className="rounded-3xl bg-white border border-border p-8">
+        <section className="rounded-3xl bg-card border border-border p-8">
           <div className="grid md:grid-cols-3 gap-6">
             <div>
               <div className="display-xl text-3xl">Ilyosxoja Usmonov</div>
@@ -76,7 +76,7 @@ function Resume() {
         </section>
 
         {/* Education */}
-        <section className="rounded-3xl bg-white border border-border p-8">
+        <section className="rounded-3xl bg-card border border-border p-8">
           <h2 className="text-xs uppercase tracking-widest text-primary font-semibold">{t("resume.education")}</h2>
           <div className="mt-4 flex items-start justify-between gap-4 flex-wrap">
             <div>
@@ -88,7 +88,7 @@ function Resume() {
         </section>
 
         {/* Skills */}
-        <section className="rounded-3xl bg-white border border-border p-8">
+        <section className="rounded-3xl bg-card border border-border p-8">
           <h2 className="text-xs uppercase tracking-widest text-primary font-semibold">{t("resume.skills")}</h2>
           <div className="mt-4 grid sm:grid-cols-3 gap-6">
             {skills.map((s, i) => (
@@ -103,7 +103,7 @@ function Resume() {
         </section>
 
         {/* Experience */}
-        <section className="rounded-3xl bg-white border border-border p-8">
+        <section className="rounded-3xl bg-card border border-border p-8">
           <h2 className="text-xs uppercase tracking-widest text-primary font-semibold">{t("resume.exp")}</h2>
           {experience.map((e, i) => (
             <div key={i} className="mt-4">
@@ -122,7 +122,7 @@ function Resume() {
         </section>
 
         {/* Languages */}
-        <section className="rounded-3xl bg-white border border-border p-8">
+        <section className="rounded-3xl bg-card border border-border p-8">
           <h2 className="text-xs uppercase tracking-widest text-primary font-semibold">{t("resume.lang")}</h2>
           <div className="mt-4 flex flex-wrap gap-3">
             <div className="px-4 py-2 rounded-full bg-primary/8 text-primary border border-primary/20 font-medium">O'zbekcha — Native</div>
@@ -135,7 +135,7 @@ function Resume() {
           <h2 className="text-xs uppercase tracking-widest text-primary font-semibold">{lang === "uz" ? "Mijozlar fikri (namuna)" : "Testimonials (sample)"}</h2>
           <div className="mt-5 grid md:grid-cols-2 gap-5">
             {[1, 2].map((i) => (
-              <blockquote key={i} className="rounded-2xl bg-white p-5 border border-border">
+              <blockquote key={i} className="rounded-2xl bg-card p-5 border border-border">
                 <p className="text-sm italic text-foreground/80">"{lang === "uz" ? "Loyiha vaqtida yetkazildi, natija kutganimdan yaxshi chiqdi." : "Delivered on time and the result exceeded expectations."}"</p>
                 <div className="mt-3 text-xs text-muted-foreground">— {lang === "uz" ? "Namuna mijoz" : "Sample client"} #{i}</div>
               </blockquote>

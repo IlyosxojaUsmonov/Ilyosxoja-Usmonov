@@ -39,7 +39,7 @@ function Blog() {
       <section className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-wrap gap-2 mb-8">
           {cats.map((c) => (
-            <button key={c} onClick={() => setCat(c)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${cat === c ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30" : "bg-white border border-border hover:border-primary text-foreground/70"}`}>
+            <button key={c} onClick={() => setCat(c)} className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${cat === c ? "bg-primary text-primary-foreground shadow-lg shadow-primary/30" : "bg-card border border-border hover:border-primary text-foreground/70"}`}>
               {c}
             </button>
           ))}
@@ -47,7 +47,7 @@ function Blog() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((p, i) => (
-            <article key={i} className="group rounded-3xl overflow-hidden bg-white border border-border hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 transition-all">
+            <article key={i} className="group rounded-3xl overflow-hidden bg-card border border-border hover:border-primary/50 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 transition-all">
               <div className="aspect-video bg-gradient-to-br from-primary/20 via-primary-glow/30 to-primary/20 relative">
                 <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-primary text-xs font-bold">{p.cat}</div>
                 <div className="absolute bottom-4 right-4 px-3 py-1 rounded-full bg-black/20 backdrop-blur text-white text-xs">{p.min} {t("blog.min")}</div>

@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { I18nProvider } from "@/lib/i18n";
+import { ThemeProvider, themeInitScript } from "@/lib/theme";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Loader } from "@/components/Loader";
@@ -88,9 +89,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <head><HeadContent /></head>
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="theme-transition">
         {children}
         <Scripts />
       </body>
@@ -102,19 +106,21 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <I18nProvider>
-        <Loader />
-        <RouteProgress />
-        <div className="flex min-h-screen flex-col">
-          <Navbar />
-          <main className="flex-1">
-            <PageTransition>
-              <Outlet />
-            </PageTransition>
-          </main>
-          <Footer />
-        </div>
-      </I18nProvider>
+      <ThemeProvider>
+        <I18nProvider>
+          <Loader />
+          <RouteProgress />
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1">
+              <PageTransition>
+                <Outlet />
+              </PageTransition>
+            </main>
+            <Footer />
+          </div>
+        </I18nProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
