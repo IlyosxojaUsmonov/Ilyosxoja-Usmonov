@@ -68,10 +68,7 @@ export function Loader() {
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               />
               {/* Inner white gap */}
-              <div
-                className="absolute rounded-full bg-background"
-                style={{ inset: 8 }}
-              />
+              <div className="absolute rounded-full bg-background" style={{ inset: 8 }} />
               {/* Photo */}
               <motion.img
                 src="/ilyosxoja.png"
@@ -110,7 +107,11 @@ export function Loader() {
                       show: { y: 0, opacity: 1 },
                     }}
                     transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                    className={ch === " " ? "w-2" : "bg-gradient-to-b from-foreground to-primary bg-clip-text text-transparent"}
+                    className={
+                      ch === " "
+                        ? "w-2"
+                        : "bg-gradient-to-b from-foreground to-primary bg-clip-text text-transparent"
+                    }
                   >
                     {ch === " " ? "\u00A0" : ch}
                   </motion.span>
@@ -122,7 +123,7 @@ export function Loader() {
                 transition={{ delay: 1.4, duration: 0.6 }}
                 className="mt-2 text-xs uppercase tracking-[0.35em] text-primary/80 font-semibold"
               >
-                Junior yangi boshlovchi
+                Frontend dasturchi
               </motion.div>
             </motion.div>
 

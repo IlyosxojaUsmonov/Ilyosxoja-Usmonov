@@ -58,7 +58,11 @@ export function Navbar() {
               </button>
             ))}
           </div>
-          <button className="lg:hidden p-2 rounded-lg hover:bg-primary/10" onClick={() => setOpen(!open)} aria-label="Menu">
+          <button
+            className="lg:hidden p-2 rounded-lg hover:bg-primary/10"
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+          >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
